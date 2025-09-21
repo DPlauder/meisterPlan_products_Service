@@ -1,8 +1,8 @@
-package com.example.productservice.product.application;
+package com.example.products_service.product.application;
 
-import com.example.productservice.product.dto.ProductDto;
-import com.example.productservice.product.domain.Product;
-import com.example.productservice.product.persistence.ProductRepository;
+import com.example.products_service.product.dto.ProductDto;
+import com.example.products_service.product.domain.Product;
+import com.example.products_service.product.persistence.ProductRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;

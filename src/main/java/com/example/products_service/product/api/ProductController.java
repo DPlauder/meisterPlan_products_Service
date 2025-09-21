@@ -1,7 +1,7 @@
-package com.example.productservice.product.api;
+package com.example.products_service.product.api;
 
-import com.example.productservice.product.application.ProductService;
-import com.example.productservice.product.dto.ProductDto;
+import com.example.products_service.product.application.ProductService;
+import com.example.products_service.product.dto.ProductDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

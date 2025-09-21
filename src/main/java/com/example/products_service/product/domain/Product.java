@@ -1,4 +1,4 @@
-package com.example.productservice.product.domain
+package com.example.products_service.product.domain;
 
 import jakarta.persistence.*;
 
@@ -16,7 +16,7 @@ public class Product{
     public Product(String name, String description, Double price){
         this.name = name;
         this.description = description;
-        this.price = price
+        this.price = price;
     }
     // Getter & Setter
     public Long getId() { return id; }

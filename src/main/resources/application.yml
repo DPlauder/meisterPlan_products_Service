@@ -1,12 +1,12 @@
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/productservice}
-    username: ${SPRING_DATASOURCE_USERNAME:product_user}
-    password: ${SPRING_DATASOURCE_PASSWORD:secret}
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    show-sql: true
+    url: jdbc:postgresql://db:5432/productservice
+    username: product_user
+    password: secret
+  spring:
+    jpa:
+      hibernate:
+        ddl-auto: update
   flyway:
     enabled: true
 
