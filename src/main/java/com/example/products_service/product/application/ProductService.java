@@ -9,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+// Geschäftslogik
 @Service
 public class ProductService {
     private final ProductRepository repo;
@@ -19,19 +20,19 @@ public class ProductService {
 
     public List<ProductDto> findAll() {
         return repo.findAll().stream()
-                .map(p -> new ProductDto(p.getId(), p.getName(), p.getDescription(), p.getPrice()))
+                .map(product -> new ProductDto(product.getId(), product.getName(), product.getDescription(), product.getPrice()))
                 .toList();
     }
 
     public ProductDto findById(Long id) {
         return repo.findById(id)
-                .map(p -> new ProductDto(p.getId(), p.getName(), p.getDescription(), p.getPrice()))
+                .map(product -> new ProductDto(product.getId(), product.getName(), product.getDescription(), product.getPrice()))
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     public ProductDto create(ProductDto dto) {
-        Product p = new Product(dto.name(), dto.description(), dto.price());
-        Product saved = repo.save(p);
+        Product product = new Product(dto.name(), dto.description(), dto.price());
+        Product saved = repo.save(product);
         return new ProductDto(saved.getId(), saved.getName(), saved.getDescription(), saved.getPrice());
     }
 }

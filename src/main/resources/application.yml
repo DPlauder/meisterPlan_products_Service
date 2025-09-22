@@ -1,12 +1,11 @@
 spring:
   datasource:
-    url: jdbc:postgresql://db:5432/productservice
+    url: jdbc:postgresql://db:5432/products
     username: product_user
     password: secret
-  spring:
-    jpa:
-      hibernate:
-        ddl-auto: update
+  jpa:
+    hibernate:
+      ddl-auto: none
   flyway:
     enabled: true
 

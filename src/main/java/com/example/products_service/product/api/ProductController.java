@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+// HTTP-Schnittstelle, definiert Endpoints
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {

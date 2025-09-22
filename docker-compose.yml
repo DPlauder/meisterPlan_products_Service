@@ -1,8 +1,9 @@
 services:
   db:
     image: postgres:16
+    container_name: products
     environment:
-      POSTGRES_DB: productservice
+      POSTGRES_DB: products
       POSTGRES_USER: product_user
       POSTGRES_PASSWORD: secret
     ports:
@@ -10,7 +11,7 @@ services:
     volumes:
       - dbdata:/var/lib/postgresql/data
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U product_user" ]
+      test: ["CMD-SHELL", "pg_isready -U product_user -d products"]
       interval: 5s
       retries: 5
 
@@ -19,7 +20,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/productservice
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/products
       SPRING_DATASOURCE_USERNAME: product_user
       SPRING_DATASOURCE_PASSWORD: secret
     depends_on:

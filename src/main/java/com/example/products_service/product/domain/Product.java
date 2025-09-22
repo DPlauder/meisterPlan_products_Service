@@ -2,14 +2,20 @@ package com.example.products_service.product.domain;
 
 import jakarta.persistence.*;
 
+// Datenbank-Objekt
 @Entity
 @Table(name = "products")
 public class Product{
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
+
     private String description;
+
+    @Column(nullable = false)
     private Double price;
 
     public Product() {}
