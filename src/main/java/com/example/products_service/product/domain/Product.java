@@ -10,6 +10,9 @@ public class Product{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
+    private String articleNum;
+
     @Column(nullable = false)
     private String name;
 
@@ -19,13 +22,23 @@ public class Product{
     private Double price;
 
     public Product() {}
+
     public Product(String name, String description, Double price){
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
+
+    public Product(String articleNum, String name, String description, Double price){
+        this.articleNum = articleNum;
         this.name = name;
         this.description = description;
         this.price = price;
     }
     // Getter & Setter
     public Long getId() { return id; }
+    public String getArticleNum() { return articleNum; }
+    public void setArticleNum(String articleNum) { this.articleNum = articleNum; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
     public String getDescription() { return description; }

@@ -21,9 +21,9 @@ public class ProductController {
         return service.findAll();
     }
 
-    @GetMapping("/{id}")
-    public ProductDto get(@PathVariable Long id) {
-        return service.findById(id);
+    @GetMapping("/{articleNum}")
+    public ProductDto get(@PathVariable String articleNum) {
+        return service.findByArticleNum(articleNum);
     }
 
     @PostMapping
